@@ -27,9 +27,9 @@ class timer
       clock_t finish_time = clock();
       clock_t waste_time = finish_time - start_time_;
       if (desc) {
-        log_info_s("[%s] Cost time : [%ld]ms", desc, waste_time / 1000);
+        log_info_s("[%s] Cost time : [%ld]ms", desc, waste_time);
       } else
-        log_info_s("Cost time : [%ld]ms", waste_time / 1000);
+        log_info_s("Cost time : [%ld]ms", waste_time);
       start();
     }
     
