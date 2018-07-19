@@ -41,7 +41,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\..\out\</OutDir>
     <IntDir>..\..\out\</IntDir>
-    <IncludePath>D:\Codes\std\src;$(IncludePath)</IncludePath>
+    <IncludePath>Z:\Codes\std\src;D:\Codes\std\src;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\out\</OutDir>
+    <IntDir>..\..\out\</IntDir>
+    <IncludePath>Z:\Codes\std\src;D:\Codes\std\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

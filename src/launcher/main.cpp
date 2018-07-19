@@ -51,6 +51,16 @@ int main() {
     // print_array(arr_int, MAX_ARR);
     break;
   }
+  case SORT_HEAP:
+  {
+    timer tm;
+    // print_array(arr_int, MAX_ARR);
+    algorithm::heap_sort(arr_int, MAX_ARR);
+    tm.end("heap sort");
+    printf("%d\n", arr_int[MAX_ARR - 1]);
+    // print_array(arr_int, MAX_ARR);
+    break;
+  }
   default:
     break;
   }

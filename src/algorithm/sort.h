@@ -92,6 +92,18 @@ namespace algorithm {
     }
   }
 
+  // Heap Sort
+  template<typename T>
+  void heap_sort(T* array, int size) {
+    int index = size / 2 - 1;
+    for (int i = index; i >= 0; ++i) {
+      if (array[i] < array[2 * i])
+        swap(array, i, 2 * i);
+      if (array[i] < array[2 * i + 1])
+        swap(array, i, 2 * i + 1);
+    }
+  }
+
 } // namespace algorithm
 } // namespace mystd
 
