@@ -64,7 +64,7 @@ namespace algorithm {
       // Move smaller to left
       while (l < r && array[r] >= key)
         --r;
-      array[l] = array[r];
+      array[l++] = array[r];
       // Move larger to right
       while (l < r && array[l] <= key)
         ++l;
@@ -96,12 +96,42 @@ namespace algorithm {
   template<typename T>
   void heap_sort(T* array, int size) {
     int index = size / 2 - 1;
-    for (int i = index; i >= 0; ++i) {
-      if (array[i] < array[2 * i])
-        swap(array, i, 2 * i);
+    // Build large top heap
+    for (int i = index; i >= 0; --i) {
       if (array[i] < array[2 * i + 1])
         swap(array, i, 2 * i + 1);
+      if (2 * i + 2 < size && array[i] < array[2 * i + 2])
+        swap(array, i, 2 * i + 2);
     }
+#if DEBUG_MODE
+    print_array(arr_int, size);
+#endif
+    // Now swap and adjust
+    for (int i = size - 1; i >= 1; --i) {
+      // Swap 0 and i
+      swap(array, 0, i);
+#if DEBUG_MODE
+      print_array(arr_int, size);
+#endif
+      // Adjust from heap top
+      for (int j = 0; j <= i / 2 - 1; ++j) {
+        bool modified = false;
+        if (array[j] < array[2 * j + 1]) {
+          swap(array, j, 2 * j + 1);
+          modified = true;
+        }
+        if (2 * j + 2 < i && array[j] < array[2 * j + 2]) {
+          swap(array, j, 2 * j + 2);
+          modified = true;
+        }
+        if (!modified)
+          break;
+      }
+#if DEBUG_MODE
+      print_array(arr_int, size);
+#endif
+    }
+    
   }
 
 } // namespace algorithm

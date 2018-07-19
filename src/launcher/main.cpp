@@ -4,7 +4,7 @@
 
 using namespace mystd;
 
-#define MAX_ARR 100000000
+#define MAX_ARR 20
 
 enum TestType
 {
@@ -18,12 +18,21 @@ enum TestType
 LL arr_int[MAX_ARR];
 
 void init() {
+  LL max = 0;
+  LL min = -1;
   make_seed();
-  for (int i = 0; i < MAX_ARR; ++i)
-    arr_int[i] = random() % MAX_ARR;
+  for (int i = 0; i < MAX_ARR; ++i) {
+    LL v = random() % MAX_ARR;
+    arr_int[i] = v;
+    if (v > max)
+      max = v;
+    if (min == -1 || v < min)
+      min = v;
+  }
+  printf("min value : [%lld], max value : [%lld]\n", min, max);
 }
 
-TestType test_type = SORT_QUICK;
+TestType test_type = SORT_HEAP;
 
 int main() {
   init();
@@ -47,18 +56,18 @@ int main() {
     // print_array(arr_int, MAX_ARR);
     algorithm::quick_sort(arr_int, MAX_ARR);
     tm.end("quick sort");
-    printf("%d\n", arr_int[MAX_ARR - 1]);
+    printf("Verify max : [%d]\n", arr_int[MAX_ARR - 1]);
     // print_array(arr_int, MAX_ARR);
     break;
   }
   case SORT_HEAP:
   {
     timer tm;
-    // print_array(arr_int, MAX_ARR);
+    print_array(arr_int, MAX_ARR);
     algorithm::heap_sort(arr_int, MAX_ARR);
     tm.end("heap sort");
-    printf("%d\n", arr_int[MAX_ARR - 1]);
-    // print_array(arr_int, MAX_ARR);
+    printf("Verify min : [%lld], max : [%lld]\n", arr_int[0], arr_int[MAX_ARR - 1]);
+    print_array(arr_int, MAX_ARR);
     break;
   }
   default:

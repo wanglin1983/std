@@ -5,7 +5,7 @@
 #include <iomanip>
 #include <sstream>
 
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
 
 namespace mystd {
 #ifdef _WIN32
