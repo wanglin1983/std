@@ -10,7 +10,7 @@
 namespace mystd {
 namespace algorithm {
 
-  // Insert sort
+  // Insert Sort
   template<typename T>
   void insert_sort(T* array, int size) {
 #if DEBUG_MODE
@@ -34,7 +34,7 @@ namespace algorithm {
     }
   }
 
-  // Bubble sort
+  // Bubble Sort
   template<typename T>
   void bubble_sort(T* array, int size) {
 #if DEBUG_MODE
@@ -78,6 +78,18 @@ namespace algorithm {
   template<typename T>
   void quick_sort(T* array, int size) {
     quick_sort_(array, 0, size - 1);
+  }
+
+  // Merge Sort
+  template<typename T>
+  void merge_sort(T* array, int size) {
+    for (int i = 0; i < size;) {
+      if (i + 1 == size)
+        break;
+      if (array[i + 1] < array[i])
+        swap(array, i, i + 1);
+      i = i + 2;
+    }
   }
 
 } // namespace algorithm

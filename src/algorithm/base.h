@@ -9,6 +9,12 @@ namespace algorithm {
     t1 = t2;
     t2 = temp;
   }
+  template<typename T>
+  void swap(T t[], int i, int j) {
+    const T temp = t[i];
+    t[i] = t[j];
+    t[j] = temp;
+  }
 } // namespace algorithm
 } // namespace mystd
 #endif
