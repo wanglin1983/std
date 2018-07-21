@@ -54,6 +54,15 @@
     <ClInclude Include="..\..\container\list.h">
       <Filter>头文件\container</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\algorithm\hash_table.h">
+      <Filter>头文件\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\string.h">
+      <Filter>头文件\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\memory.h">
+      <Filter>头文件\base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\launcher\main.cpp">

@@ -7,6 +7,10 @@
 
 typedef long long LL;
 
+#ifndef NULL
+#define NULL 0
+#endif
+
 namespace mystd {
   // Print array
   template<typename T>

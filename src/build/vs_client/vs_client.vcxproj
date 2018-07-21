@@ -74,11 +74,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\algorithm\base.h" />
+    <ClInclude Include="..\..\algorithm\hash_table.h" />
     <ClInclude Include="..\..\algorithm\sort.h" />
     <ClInclude Include="..\..\base\base.h" />
     <ClInclude Include="..\..\base\init.h" />
     <ClInclude Include="..\..\base\logger.h" />
+    <ClInclude Include="..\..\base\memory.h" />
     <ClInclude Include="..\..\base\smart_ptr.h" />
+    <ClInclude Include="..\..\base\string.h" />
     <ClInclude Include="..\..\base\timer.h" />
     <ClInclude Include="..\..\base\type.h" />
     <ClInclude Include="..\..\container\list.h" />
