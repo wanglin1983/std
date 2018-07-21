@@ -2,6 +2,9 @@
 #include "base/base.h"
 #include "base/timer.h"
 
+#include "algorithm/hash_table.h"
+#include "algorithm/trie.h"
+
 using namespace mystd;
 
 #define MAX_ARR 20

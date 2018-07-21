@@ -7,7 +7,7 @@
 
 namespace mystd {
 
-#define MAX_HASH_TABLE_SIZE 100000013
+#define MAX_HASH_TABLE_SIZE 10000013
 #define MAX_STR_SIZE 20
 
   class HashTable
@@ -25,11 +25,11 @@ namespace mystd {
       HashNode* next;
     };
 
-    HashTable(LL size = MAX_HASH_TABLE_SIZE);
+    HashTable(UINT size = MAX_HASH_TABLE_SIZE);
     ~HashTable();
 
-    LL GetHashKey(char* str) {
-      unsigned int value = 131;
+    UINT GetHashKey(char* str) {
+      UINT value = 131;
       while (*str)
         value += (value << 5) + *str++;
       return value % size_;
@@ -67,7 +67,7 @@ namespace mystd {
     }
 
     HashNode* Find(char* str) {
-      LL index = GetHashKey(str);
+      UINT index = GetHashKey(str);
       HashNode* node = &hash_table_[index];
       while (node) {
         if (StrSame(node->str, str))
@@ -79,11 +79,11 @@ namespace mystd {
     }
 
   private:
-    LL size_;
+    UINT size_;
     HashNode *hash_table_;
   };
 
-  HashTable::HashTable(LL size)
+  HashTable::HashTable(UINT size)
   {
     size_ = size;
     hash_table_ = new HashNode[size_];

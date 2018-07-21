@@ -73,9 +73,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\algorithm\base.h" />
     <ClInclude Include="..\..\algorithm\hash_table.h" />
     <ClInclude Include="..\..\algorithm\sort.h" />
+    <ClInclude Include="..\..\algorithm\trie.h" />
     <ClInclude Include="..\..\base\base.h" />
     <ClInclude Include="..\..\base\init.h" />
     <ClInclude Include="..\..\base\logger.h" />
